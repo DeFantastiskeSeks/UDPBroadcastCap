@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPBroadcast", "UDPBroadcast\UDPBroadcast.csproj", "{561AB7B1-92CE-45ED-90DC-DC90358B2C73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{561AB7B1-92CE-45ED-90DC-DC90358B2C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{561AB7B1-92CE-45ED-90DC-DC90358B2C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{561AB7B1-92CE-45ED-90DC-DC90358B2C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{561AB7B1-92CE-45ED-90DC-DC90358B2C73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74465822-A909-40CA-9DFC-3B1F7176106C}
+	EndGlobalSection
+EndGlobal

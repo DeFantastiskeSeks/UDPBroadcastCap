@@ -15,7 +15,7 @@ namespace UdpBroadcastCapture
         //private static readonly IPAddress IpAddress = IPAddress.Parse("192.168.5.137"); 
         // Listen for activity on all network interfaces
         // https://msdn.microsoft.com/en-us/library/system.net.ipaddress.ipv6any.aspx
-        static void Main()
+        static async void Main()
         {
             IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Any, Port);
             using (UdpClient socket = new UdpClient(ipEndPoint))
@@ -29,19 +29,20 @@ namespace UdpBroadcastCapture
                     string message = Encoding.ASCII.GetString(datagramReceived, 0, datagramReceived.Length);
                     Console.WriteLine("Receives {0} bytes from {1} port {2} message {3}", datagramReceived.Length,
                         remoteEndPoint.Address, remoteEndPoint.Port, message);
-                    //Parse(message);
+                    Parse(message);
+                    await Post(message);
                 }
             }
         }
 
-        // To parse data from the IoT devices (depends on the protocol)
+        // To parse data from the IoT devices (depends on the protocol) 
         private static void Parse(string response)
         {
             string[] parts = response.Split(' ');
-            foreach (string part in parts)  
-            {
-                Console.WriteLine(part);
-            }
+            //foreach (string part in parts)  
+            //{
+            //    Console.WriteLine(part);
+            //}
             string temperatureLine = parts[1];
             string temperatureStr = temperatureLine.Substring(temperatureLine.IndexOf(": ") + 2);
             Console.WriteLine(temperatureStr);

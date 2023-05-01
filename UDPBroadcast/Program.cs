@@ -38,7 +38,7 @@ namespace UdpBroadcastCapture
         private static void Parse(string response)
         {
             string[] parts = response.Split(' ');
-            foreach (string part in parts)
+            foreach (string part in parts)  
             {
                 Console.WriteLine(part);
             }
@@ -46,5 +46,18 @@ namespace UdpBroadcastCapture
             string temperatureStr = temperatureLine.Substring(temperatureLine.IndexOf(": ") + 2);
             Console.WriteLine(temperatureStr);
         }
+
+        private static async Task Post(string message)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var content  = new StringContent(message, Encoding.UTF8 , "application/json");
+                HttpResponseMessage response = client.PostAsync("https://speedtrapapi20230411142537.azurewebsites.net/api/SpeedTraps", content).Result;
+                var responseString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseString);
+            }
+        }
+
+
     }
 }
